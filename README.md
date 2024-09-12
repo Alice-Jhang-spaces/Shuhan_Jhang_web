@@ -87,8 +87,7 @@ This website allows users to explore and search for popular dramas and movies, w
 ---
 
 ## GitHub Repository Link
--https://github.com/Alice-Jhang-spaces/Assignment1_mywebsite.git
-
+https://github.com/Alice-Jhang-spaces/Shuhan_Jhang_web.git
 
 
 ---
