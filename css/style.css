@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: rgb(237, 206, 235);
+    border-bottom: 1px solid #eda0dc;
+    padding: 25px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 30px;
+    margin-right: 5px;
+}
+
+#logo-container h1 {
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Search Bar */
+#search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#search-bar input {
+    padding: 5px;
+    border: 1px solid #dfbde2;
+    border-radius: 20px;
+    margin-right: 30px;
+}
+
+#search-bar button {
+    padding: 6px 12px;
+    background-color: #b413a6;
+    color: rgb(245, 244, 244);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#search-bar button:hover {
+    background-color: #f465da;
+}
+
+/* Recommended Dramas and Popular Movies section headers */
+h2 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #4011c2;
+}
+
+
+
+
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.gallery-item {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-item img {
+    width: 300px;  /* Fixed width */
+    height: 400px; /* Fixed height */
+    object-fit: cover; /* Ensures proper fit inside the fixed size */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #926fea;
+}
+
+/* Audio Section */
+#audio-section {
+    text-align: center;
+    padding: 30px;
+    background-color: #ececec;
+    margin-top: 30px;
+}
+
+#audio-section h2 {
+    margin-bottom: 20px;
+    color: #4011c2;
+}
+
+audio {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Drama Info Table */
+#drama-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#drama-info th, #drama-info td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#drama-info th {
+    background-color: #4011c2;
+    color: white;
+}
+
+#drama-info td {
+    background-color: #f2f2f2;
+}
+
+/* Feedback Form */
+#feedback-form {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+}
+
+#feedback-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#feedback-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#feedback-form input, #feedback-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#feedback-form button {
+    padding: 10px 20px;
+    background-color: #b413a6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#feedback-form button:hover {
+    background-color: #f465da;
+}
+
+/* Summary Section */
+#drama-summary {
+    padding: 20px;
+    background-color: #ececec;
+    margin: 20px 0;
+}
+
+#drama-summary details {
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#drama-summary summary {
+    font-weight: bold;
+    color: #4011c2;
+    cursor: pointer;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #f3c6ef;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagination a, .pagination span {
+    color: #6e5df1;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 5px;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background-color: #9687c5;
+}
+
+.pagination a.active {
+    background-color: #f394de;
+    color: white;
+}
+
+.pagination span {
+    background-color: #f4f4f4;
+    color: #dfdcdf;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
