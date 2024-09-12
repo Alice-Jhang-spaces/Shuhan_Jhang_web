@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pop.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Drama and Movie Watch</title>
+</head>
+<body>
+
+    <!-- Header with Search Bar -->
+    <header>
+        <div class="header-container">
+            <div id="logo-container">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h1>Drama & Movie Watch Online</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="dramas.html">Drama Series</a></li>
+                </ul>
+            </nav>
+            <div id="search-bar">
+                <form action="search-results.html" method="GET">
+                    <input type="text" placeholder="Search for dramas or movies..." name="query" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Recommended Dramas Section -->
+    <section id="recommended-dramas">
+        <h2>Recommended Dramas</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <a href="drama1.html">
+                    <img src="images/miss.jpg" alt="Drama 1">
+                    <p>Someday or One Day</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="dramas.html">
+                    <img src="images/friend.jpg" alt="Drama 2">
+                    <p>Friends</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Movies Section -->
+    <section id="popular-movies">
+        <h2>Popular Movies</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <a href="movies.html">
+                    <img src="images/inside.jpg" alt="Movie 1">
+                    <p>Inside Out 2</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="movies.html">
+                    <img src="images/dead.jpg" alt="Movie 2">
+                    <p>Deadpool & Wolverine</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drama Info Table Section -->
+    <section id="drama-info">
+        <h2>Drama and Movie Information</h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Release Year</th>
+                <th>Genre</th>
+                <th>Episodes</th>
+            </tr>
+            <tr>
+                <td>Someday or One Day</td>
+                <td>2019</td>
+                <td>Drama, Fantasy, Romance</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>Inside Out 2</td>
+                <td>2024</td>
+                <td>Animation, Comedy</td>
+                <td>N/A</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio-section">
+        <h2>Listen to Music</h2>
+        <audio controls>
+            <source src="Media/Alone.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section id="feedback-form">
+        <h2>Submit Your Feedback</h2>
+        <form action="submit-feedback.html" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+    
+
+
+
+    <!-- Footer with Contact Info -->
+    <footer>
+        <p>Call us at: <a href="tel:+1234567890">+1234567890</a></p>
+        <p>Email us at: <a href="mailto:jhang.s@northeastern.edu">jhang.s@northeastern.edu</a></p>
+        <p>&copy; 2024 Drama & Movie Watch Online</p>
+    </footer>
+
+</body>
+</html>
