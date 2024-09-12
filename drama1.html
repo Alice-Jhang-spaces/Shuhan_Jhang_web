@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/pop.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Drama 1 - Someday or One Day</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div id="logo-container">
+                <img src="images/logo.png" alt="Logo" id="logo" />
+                <h1>Drama 1 - Someday or One Day</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="dramas.html">Dramas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Summary Section -->
+    <section id="drama-summary">
+        <h2>Drama Summary</h2>
+        <details>
+            <summary>Click to read more about "Someday or One Day"</summary>
+            <p>"Someday or One Day" is a Taiwanese drama that follows the story of a woman who travels back in time to relive moments of her past, intertwined with mystery and romance.</p>
+        </details>
+    </section>
+
+    <!-- Drama Info Table -->
+    <section id="drama-info">
+        <h2>Drama Information</h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <td>Someday or One Day</td>
+            </tr>
+            <tr>
+                <th>Release Year</th>
+                <td>2019</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>Drama, Fantasy, Romance</td>
+            </tr>
+            <tr>
+                <th>Episodes</th>
+                <td>13</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Watch the Trailer</h2>
+        <video width="600" controls>
+            <source src="Media/miss_t.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Feedback Form -->
+    <section id="feedback-form">
+        <h2>Feedback</h2>
+        <form action="submit-feedback.php" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <!-- Footer with Contact Info -->
+    <footer>
+        <p>Call us at: <a href="tel:+1234567890">+1234567890</a></p>
+        <p>Email us at: <a href="mailto:jhang.s@northeastern.edu">jhang.s@northeastern.edu</a></p>
+        <p>&copy; 2024 Drama & Movie Watch Online</p>
+    </footer>
+
+</body>
+</html>
