@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Portfolio</title>
+    <link rel="icon" href="images/pop.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shuhan Jhang</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <details>
+            <summary>Click to read more about my professional background</summary>
+            <p>Analytical system-level test engineer with expertise in product validation, failure analysis, and project management.</p>
+            <p>Skilled in enhancing product quality, manufacturability, and performance through innovation and collaboration.</p> 
+            <p>Committed to continuous learning and professional growth.</p>
+        </details>
+    </section>
+    
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="image-gallery">
+            <img src="images/self.jpg" alt="Shuhan Jhang" width="200" height="300">
+        </div>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Institution</th>
+                            <th>Location</th>
+                            <th>Dates Attended</th>
+                            <th>Degree</th>
+                            <th>GPA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Northeastern University</td>
+                            <td>Boston, MA</td>
+                            <td>2017/9-Present</td>
+                            <td>Master of Science in Information Systems</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>NATIONAL CHIAO TUNG UNIVERSITY</td>
+                            <td>Hsinchu City, Taiwan</td>
+                            <td>2017/9-2019/8</td>
+                            <td>Master of Science in Bioinformatics</td>
+                            <td>3.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+
+
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <h3>System-Level Test Engineer at Qualcomm, Taiwan</h3>
+                    <p><strong>Duration:</strong> 2022/9 - 2023/12</p>
+                    <ul>
+                        <li>Innovated and designed system-level features to improve quality and manufacturability.</li>
+                        <li>Collaborated with software, board design, and ATE, throughout the product life cycle.</li>
+                    </ul>
+                    <div class="company-logo">
+                        <figure>
+                            <img src="images/qualcomm.jpeg" alt="Qualcomm Logo">
+                            <figcaption>Qualcomm</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <h3>Project Manager at Phison, Taiwan</h3>
+                    <p><strong>Duration:</strong> 2021/2 - 2022/2</p>
+                    <ul>
+                        <li>Provided technical support and quality assurance recommendations to resolve production issues.</li>
+                        <li>Led project schedules, coordinating communication between customers and internal departments.</li>
+                    </ul>
+                    <div class="company-logo">
+                        <figure>
+                            <img src="images/phison.png" alt="Phison Logo">
+                            <figcaption>Phison</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <h3>Product Engineer at Micron, Taiwan</h3>
+                    <p><strong>Duration:</strong> 2019/9 - 2021/1</p>
+                    <ul>
+                        <li>Designed and tested DDR4 products using classified algorithms and methods.</li>
+                        <li>Developed product proposals, enhancing yield by 10% and reducing production time by 12 seconds.</li>
+                    </ul>
+                    <div class="company-logo">
+                        <figure>
+                            <img src="images/micron.png" alt="Micron Logo">
+                            <figcaption>Micron</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    <section id="skills" class="center-section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <img src="images/python.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="images/matlab.png" alt="MATLAB">
+                <p>MATLAB</p>
+            </div>
+            <div class="skill-item">
+                <img src="images/linux.png" alt="Shell Script">
+                <p>Shell Script</p>
+            </div>
+            <div class="skill-item">
+                <img src="images/html.png" alt="HTML">
+                <p>HTML</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+    <section id="media">
+        <h2>Media</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/01dn67QubYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <!-- Audio Section -->
+        <h3>Listen to My Podcast</h3>
+        <audio controls>
+            <source src="audio/Alone.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+    
+    
+
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <input type="submit" value="Submit">
+        </form>
+        <p><a href="mailto:jhang.s@northeastern.edu">Email Me</a></p>
+        <p><a href="tel:+12345678">Call Me</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Shuhan Jhang. All rights reserved.</p>
+    </footer>
+</body>
+</html>

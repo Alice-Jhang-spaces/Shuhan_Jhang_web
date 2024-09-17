@@ -1,0 +1,375 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center; /* Centers all content in the header */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Removes underline from the links */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* About Section */
+section#about {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center; /* Centers text inside the About section */
+}
+
+/* Portfolio Section */
+section#portfolio {
+    padding: 20px;
+    background-color: #eaeaea;
+    overflow: auto; /* Enables scrolling if necessary */
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.image-gallery figure {
+    position: relative; /* Relative positioning for captions */
+    text-align: center;
+}
+
+.image-gallery img {
+    border-radius: 50%; /* Circular profile image */
+    border: 2px solid #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+}
+
+.image-gallery figcaption {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    display: none; /* Hide by default */
+}
+
+/* Hover Effect on Image */
+.image-gallery:hover figcaption {
+    display: block; /* Show caption on hover */
+}
+
+/* Experience Section */
+section#experience {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.experience {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.job {
+    flex: 1 1 45%; /* Responsive two-column layout */
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job h3 {
+    color: #333;
+}
+
+/* Skills Section */
+section#skills {
+    padding: 20px;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+/* Skills Section */
+section#skills {
+    background-color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+}
+
+.skills-container {
+    overflow: hidden; /* Clears the float inside the container */
+    margin: 20px auto;
+    width: 90%; /* Container width */
+}
+
+/* Skill items floated left with equal size */
+.skill-item {
+    float: left; /* Floats each skill item to the left */
+    width: 22%; /* Ensures that four items fit in a row */
+    margin: 1%;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Ensuring all images are the same size */
+.skill-item img {
+    width: 100px; /* Fixed width for all skill icons */
+    height: 100px; /* Fixed height for all skill icons */
+    display: block;
+    margin: 0 auto 10px auto; /* Centers the image */
+}
+
+/* Clear floats after the container */
+.skills-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .skill-item {
+        width: 46%; /* Two items per row on smaller screens */
+        margin: 2%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skill-item {
+        width: 100%; /* One item per row on very small screens */
+        margin: 10px 0;
+    }
+}
+
+
+.skill-item {
+    margin: 15px;
+    text-align: center;
+}
+
+.skill-item img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Media Section */
+section#media {
+    padding: 20px;
+    text-align: center;
+}
+
+section#media iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* Contact Section */
+section#contact {
+    padding: 20px;
+    background-color: #fff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        text-align: center; /* Centers the menu items */
+    }
+
+    .image-gallery {
+        margin: 0;
+    }
+
+    .experience {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    header, footer {
+        font-size: 12px;
+    }
+
+    .image-gallery img {
+        width: 150px; /* Adjusts the image size on smaller screens */
+    }
+
+    section#media iframe {
+        width: 100%;
+    }
+}
+/* Education Section */
+section#education {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center; /* Centers the title */
+}
+
+.education-container {
+    display: flex;
+    justify-content: center; /* Centers the table horizontally */
+    margin-top: 20px;
+}
+
+.education-container table {
+    width: 80%; /* Adjusts the table width */
+    border-collapse: collapse; /* Combines borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+    background-color: white; /* Table background */
+}
+
+.education-container th, .education-container td {
+    border: 1px solid #ddd; /* Table borders */
+    padding: 15px; /* Adds padding inside cells */
+    text-align: center; /* Centers the text */
+}
+
+.education-container th {
+    background-color: #333;
+    color: white;
+}
+
+.education-container td {
+    background-color: #f2f2f2;
+}
+
+.education-container tr:nth-child(even) td {
+    background-color: #eaeaea; /* Alternate row color */
+}
+
+/* Responsive Table on Smaller Screens */
+@media screen and (max-width: 768px) {
+    .education-container table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .education-container th, .education-container td {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+/* Experience Section - Company Logos */
+.company-logo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.company-logo figure {
+    position: relative;
+    width: 150px; /* Adjust the size of the company logos */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo img {
+    width: 100%;
+    transition: transform 0.5s ease; /* Smooth scaling on hover */
+}
+
+.company-logo figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.company-logo:hover img {
+    transform: scale(1.05); /* Slightly zoom the logo on hover */
+}
+
+.company-logo:hover figcaption {
+    opacity: 1; /* Show caption when hovering */
+}
+
+/* Media Queries for iPad and Smartphones */
+@media screen and (max-width: 768px) {
+    .company-logo figure {
+        width: 120px; /* Resize logo for tablets */
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .company-logo figure {
+        width: 100px; /* Resize logo for small smartphones */
+    }
+
+    .company-logo figcaption {
+        font-size: 10px; /* Reduce font size for captions on small screens */
+    }
+}
