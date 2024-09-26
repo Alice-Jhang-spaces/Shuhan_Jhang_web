@@ -1,0 +1,69 @@
+/* General body styling */
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Dropdown rows that are hidden initially */
+.dropDownTextArea {
+  background-color: #f9f9f9;
+  font-size: 12px;
+  display: none;
+  text-align: left;
+  padding: 10px;
+  vertical-align: top;
+  border-top: 1px solid #a7c942;
+  width: 100%;
+}
+
+/* Ensure the content inside the dropdown row spans properly */
+.dropDownTextArea td {
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* Styling for the social media icons */
+.socialmediaicons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialmediaicons ul li {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.socialmediaicons ul li img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.socialmediaicons {
+  text-align: center;
+}
+
+/* Button styles */
+button {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for disabled button */
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Submit button style when enabled */
+#button:enabled {
+  background-color: orange;
+  color: white;
+}

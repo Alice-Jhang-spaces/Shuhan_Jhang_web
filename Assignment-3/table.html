@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table CheckList</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- Table structure -->
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>STUDENT</th>
+                <th>ADVISOR</th>
+                <th>AWARD<br/>STATUS</th>
+                <th>SEMESTER</th>
+                <th>TYPE</th>
+                <th>BUDGET<br />#</th>
+                <th>PERCENTAGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" onclick="selectRecord(this)" /><br /><br /><img src="down.png" width="25px" onclick="toggleRow(this)" /></td>
+                <td>Student 1</td>
+                <td>Teacher 1</td>
+                <td>Approved</td>
+                <td>Fall</td>
+                <td>TA</td>
+                <td>12345</td>
+                <td>100%</td>
+ 
+            </tr>
+            <tr class="dropDownTextArea" style="display: none;"><td colspan="10">
+                Advisor:<br /><br />
+                Award Details<br />
+                Summer 1-2014(TA)<br />
+                Budget Number: <br />
+                Tuition Number: <br />
+                Comments:<br /><br /><br />
+                Award Status:<br /><br /><br />
+            </td></tr>
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <button id="button" disabled style="background-color: gray;">SUBMIT SELECTED AWARDS</button>
+    <button id="add">Add New Student</button>
+
+    <!-- Pop-up box for Edit functionality -->
+    <div id="popup" style="display: none; position: fixed; top: 20%; left: 30%; width: 40%; padding: 20px; background-color: white; border: 1px solid black; z-index: 1000;">
+    </div>
+
+    <nav class="socialmediaicons"></nav>
+    <script src="script.js"></script>
+</body>
+</html>

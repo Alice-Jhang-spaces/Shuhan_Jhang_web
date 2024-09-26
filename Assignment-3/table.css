@@ -1,0 +1,78 @@
+/* General table styling */
+#myTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid #a7c942;
+}
+
+/* Table header styling */
+#myTable th {
+    background-color: #a7c942;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #a7c942;
+}
+
+/* Table cell styling */
+#myTable td {
+    padding: 10px;
+    border: 1px solid #a7c942;
+    text-align: left;
+}
+
+/* Style for rows that are highlighted (when selected) */
+#myTable tr.selected {
+    background-color: yellow;
+}
+
+/* Dropdown rows that are hidden initially */
+.dropDownTextArea {
+    background-color: #f9f9f9;
+    font-size: 12px;
+    display: none;
+    text-align: left;
+    padding: 10px;
+    vertical-align: top;
+    border-top: 1px solid #a7c942;
+    width: 100%;
+}
+
+/* Ensure the content inside the dropdown row spans properly */
+.dropDownTextArea td {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Style for the submit button */
+#button {
+    background-color: gray;
+    color: white;
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+/* When the submit button is enabled */
+#button:enabled {
+    background-color: orange;
+    cursor: pointer;
+}
+
+/* Add New Student button styling */
+#add {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Style for the checkbox input */
+#myTable input[type="checkbox"] {
+    margin-left: 5px;
+}
