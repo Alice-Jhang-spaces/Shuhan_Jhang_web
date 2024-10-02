@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Feedback</title>
+    <style>
+        /* Validation should show a red color text along with each field */
+        label { float: left; width: 150px; }
+        #container { width: 700px; margin: auto; background-color: beige; }
+        .error { color: red; font-size: 12px; margin-left: 160px; display: block; }
+        main { padding: 50px; }
+
+        /* Styling for the dropdown (drinks select box) */
+        #drinks {
+            width: 60%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+
+        /* Enhanced look for the buttons */
+        button[type="submit"], button[type="reset"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        button[type="reset"] {
+            background-color: #6c757d;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Styling the table for display results */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <main>
+            <h2>Feedback</h2>
+            <h3>Love something? Hate something? Let us know!</h3>
+            <p>Note: Fields marked with an asterisk(*) are mandatory</p>
+            <form id="feedbackForm" method="post" novalidate>
+                
+                <!-- Title radio buttons -->
+                <label>Title*:</label>
+                <input type="radio" name="title" id="miss" value="miss" required/>Miss
+                <input type="radio" name="title" id="mr" value="mr" required/>Mr.
+                <input type="radio" name="title" id="mrs" value="mrs" required/>Mrs.
+                <br><br>
+                
+                <!-- First Name -->
+                <label for="firstName">First Name*:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required/>
+                <span id="firstNameError" class="error"></span>
+                <br><br>
+                
+                <!-- Last Name -->
+                <label for="lastName">Last Name*:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required/>
+                <span id="lastNameError" class="error"></span>
+                <br><br>
+                
+                <!-- Email -->
+                <label for="emailId">Email Id*:</label>
+                <input type="text" name="emailId" id="emailId" placeholder="yourname@northeastern.edu" required/>
+                <span id="emailError" class="error"></span>
+                <br><br>
+                
+                <!-- Phone Number -->
+                <label for="phoneNumber">Phone Number*:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required/>
+                <span id="phoneError" class="error"></span>
+                <br><br>
+
+                <!-- Address -->
+                <label for="address">Address*:</label>
+                <input type="text" name="address" id="address" placeholder="1234 Main St" required/>
+                <span id="addressError" class="error"></span>
+                <br><br>
+
+                <!-- Street Address 2 (Optional) -->
+                <label for="streetAddress2">Street Address 2:</label>
+                <input type="text" name="streetAddress2" id="streetAddress2" placeholder="Apartment, studio, or floor"/>
+                <br><br>
+
+                <!-- Zip Code -->
+                <label for="zipcode">ZipCode*:</label>
+                <input type="text" name="zipcode" id="zipcode" placeholder="xxxxx" required/>
+                <span id="zipcodeError" class="error"></span>
+                <br><br>
+                
+                <!-- How did you hear checkboxes -->
+                <label for="howDidYouHear">How did you hear*:</label>
+                <input type="checkbox" name="source" value="facebook"/> Facebook
+                <input type="checkbox" name="source" value="google"/> Google
+                <input type="checkbox" name="source" value="yelp"/> Yelp
+                <span id="sourceError" class="error"></span>
+                <br><br>
+                
+                <!-- Comments -->
+                <label for="comments">Comments*:</label>
+                <textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
+                <span id="commentsError" class="error"></span>
+                <br><br>
+
+                <!-- Drinks Dropdown -->
+                <label for="drinks">Drinks*:</label>
+                <select id="drinks" name="drinks" onchange="handleDrinkChange()">
+                    <option value="">Select a drink</option>
+                    <option value="hot_black_tea">Hot Black Tea</option>
+                    <option value="green_tea">Green Tea</option>
+                    <option value="iced_tea">Iced Tea</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="juice">Juice</option>
+                </select>
+                <span id="drinkError" class="error"></span>
+                <br><br>
+
+                <!-- Dynamic Checkbox and Dropdown for Size -->
+                <div id="drinkOptions"></div>
+
+                <!-- Submit and Reset Buttons -->
+                <button type="submit" id="submitBtn" disabled>Submit</button>
+                <button type="reset">Reset</button>
+                <br><br>
+            </form>
+
+            <!-- Results Table Placeholder -->
+            <div id="results"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
