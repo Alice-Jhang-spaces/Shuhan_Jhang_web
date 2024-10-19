@@ -1,0 +1,177 @@
+// Variables
+$primary-color: #48c9b0;
+$secondary-color: #f7f7f7;
+$dark-theme-bg: #333;
+$dark-theme-text: #fff;
+$gradient-start: #eef5f3;
+$gradient-end: #1a9be0;
+
+// Mixin for gradient backgrounds
+@mixin gradient-bg($start-color, $end-color) {
+  background: linear-gradient(135deg, $start-color, $end-color);
+}
+
+// Mixin for button styles
+@mixin btn-styles($bg-color) {
+  background-color: $bg-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// Placeholder selector for common form styles
+%form-styles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+// Global body styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  color: black;
+  margin: 0;
+  padding: 0;
+
+  // Dark theme styles
+  &.dark-theme {
+    background-color: $dark-theme-bg;
+    color: $dark-theme-text;
+
+    .btn {
+      background-color: $primary-color;
+    }
+  }
+}
+
+// Header styles
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 20px;
+
+  h1 {
+    color: white;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      margin-left: 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Form and Trade Section styles
+.trade-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+
+  // Apply gradient to form background
+  .trade-form {
+    @extend %form-styles;
+    width: 100%;
+    min-width: 200px;
+  
+    border-radius: 10px;
+    @include gradient-bg($gradient-start, $gradient-end); // Apply gradient here
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input, select {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80%;
+    }
+
+    // Coin buttons section with Grid layout
+    .coins {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      align-items: center;
+      width: 80%;
+      min-width: 200px;
+      
+      justify-content: center;
+
+      // Buttons with gradient
+      .btn {
+        @include btn-styles($primary-color); // Mixin for button styles
+        width: 100%; // Make buttons responsive to the grid
+        text-align: center;
+        height: 50px;
+        @include gradient-bg($primary-color, $gradient-end); // Add gradient to buttons
+      }
+      p{
+        text-align: center;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        align-content:center;
+
+      }
+    }
+  }
+}
+
+// Grid layout for currency display
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+
+  .currency-item {
+    background-color: $primary-color;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    
+    h2 {
+      margin: 0 0 10px;
+    }
+  }
+}
+
+// Footer styles
+footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 80px;
+  background-color: $primary-color;
+  color: white;
+}

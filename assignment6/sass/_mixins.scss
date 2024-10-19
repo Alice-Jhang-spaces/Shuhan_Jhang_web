@@ -1,0 +1,104 @@
+// Flex Center Mixin
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// Grid Container Mixin
+@mixin grid-container($columns) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: 20px;
+}
+
+// Header and Footer Styling
+.header, .footer {
+    display: flex;
+    flex-direction: column; // Stacks the h1 and nav vertically
+    align-items: center; // Centers the content horizontally
+    justify-content: center; // Centers the content vertically
+    height: 100%; // Ensures full height for vertical centering
+    margin-top: 50px;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    nav {
+      ul {
+        list-style: none; // Remove bullet points from the list
+        padding: 0;
+        display: flex; // Make the list items horizontal
+        justify-content: center; // Center the list items
+        align-items: center; // Center the list items vertically
+      }
+  
+      li {
+        margin: 0 15px; // Add spacing between list items
+        text-align: center;
+      }
+  
+      a {
+        color: rgb(61, 58, 222);
+        text-decoration: none;
+        font-weight: bold;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+
+
+
+// Box Shadow Mixin for consistent shadows (fixed offset, flexible shadow color)
+@mixin box-shadow($shadow-color) {
+    box-shadow: 0 4px 8px $shadow-color;
+}
+
+
+// Prefix Mixin for dynamic property names with vendor prefixes using interpolation
+@mixin prefix($property, $value, $prefixes...) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+// Applying the styles in the grid layout with currency items
+.grid-layout {
+    @include grid-container(2); // Apply grid-container mixin with 2 columns
+
+    .currency-item {
+        background-color: $secondary-color;
+        color: white;
+        padding: 10px;
+        border-radius: 10px; // Rounded corners
+        @include flex-center; // Center the content using flex-center mixin
+        flex-direction: column;
+        @include box-shadow(0); // Apply box shadow with one argument for the shadow color
+        text-align: center;
+
+        // Using the prefix mixin with interpolation to generate vendor prefixes for the filter property
+        @include prefix(filter, grayscale(10%), moz, webkit, ms);
+
+        &:hover {
+            background-color: $primary-color; // Change background on hover
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+}

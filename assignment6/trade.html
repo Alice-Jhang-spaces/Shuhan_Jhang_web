@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Trade Cryptocurrency</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Start Trading</h1>
+        
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button id="theme-toggle" style="margin-bottom: 20px;margin-top: 20px;">Login Account</button>
+       
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trade.html">Trade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="trade-section">
+        <form class="trade-form">
+            <label for="action">Choose Action:</label>
+            <select id="action" name="action">
+                <option value="buy">Buy</option>
+                <option value="sell">Sell</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1">
+
+            <div class="coins">
+                <p class="btn">Bitcoin (BTC)</p>
+                <p class="btn">Ethereum (ETH)</p>
+                <p class="btn">Ripple (XRP)</p>
+                <p class="btn">Litecoin (LTC)</p>
+            </div>
+        </form>
+    </section>
+
+    <section class="grid-layout">
+        <div class="currency-item">
+            <h2>Bitcoin (BTC)</h2>
+            <p>Current price: $56,000</p>
+        </div>
+        <div class="currency-item">
+            <h2>Ethereum (ETH)</h2>
+            <p>Current price: $3,800</p>
+        </div>
+        <div class="currency-item">
+            <h2>Ripple (XRP)</h2>
+            <p>Current price: $12</p>
+        </div>
+        <div class="currency-item">
+            <h2>Litecoin (LTC)</h2>
+            <p>Current price: $180</p>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>© 2024 Crypto Trade Hub</p>
+    </footer>
+
+
+    <script>
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      themeToggle.addEventListener('click', function() {
+          body.classList.toggle('dark-theme');
+      });
+
+      
+    </script>
+</body>
+</html>

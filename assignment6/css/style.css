@@ -1,0 +1,371 @@
+:root {
+  --primary-color: #3498db;
+  --primary-color-hover: #a2e69a; /* Manually define a darkened version */
+  --button-bg: #655465;
+  --button-text-color: #000;
+  --primary: #81899b;
+  --accent: #302e24;
+  --warn: darkblue;
+  --consumed-by-js: #81899b;
+}
+
+body.dark-theme {
+  --button-bg: #000;
+  --button-text-color: #fff;
+  --primary-color-hover: #a2e69a; /* Darken for dark theme */
+}
+
+.header, .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  margin-top: 50px;
+}
+.header h1, .footer h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.header nav ul, .footer nav ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header nav li, .footer nav li {
+  margin: 0 15px;
+  text-align: center;
+}
+.header nav a, .footer nav a {
+  color: rgb(61, 58, 222);
+  text-decoration: none;
+  font-weight: bold;
+}
+.header nav a:hover, .footer nav a:hover {
+  text-decoration: underline;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.grid-layout .currency-item {
+  background-color: #eded95;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 4px 8px 0;
+          box-shadow: 0 4px 8px 0;
+  text-align: center;
+  -moz-filter: grayscale(10%);
+  -webkit-filter: grayscale(10%);
+  -ms-filter: grayscale(10%);
+  filter: grayscale(10%);
+}
+.grid-layout .currency-item:hover {
+  background-color: #5ddbef;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.grid-layout .currency-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+.grid-layout .currency-item p {
+  font-size: 1.2em;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 20px;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 500px;
+  height: 100px;
+  background-color: plum;
+  font-size: 8pt;
+  border-radius: 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+}
+
+.trade-section .trade-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+body.dark-theme .btn {
+  background-color: #48c9b0;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #48c9b0;
+  padding: 20px;
+}
+.header h1 {
+  color: white;
+}
+.header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.header nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+.header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.trade-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.trade-section .trade-form {
+  width: 100%;
+  min-width: 200px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #eef5f3, #1a9be0);
+}
+.trade-section .trade-form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.trade-section .trade-form input, .trade-section .trade-form select {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+.trade-section .trade-form .coins {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  min-width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.trade-section .trade-form .coins .btn {
+  background-color: #48c9b0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  background: linear-gradient(135deg, #48c9b0, #1a9be0);
+}
+.trade-section .trade-form .coins .btn:hover {
+  background-color: #33ab94;
+}
+.trade-section .trade-form .coins p {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.grid-layout .currency-item {
+  background-color: #48c9b0;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+.grid-layout .currency-item h2 {
+  margin: 0 0 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 80px;
+  background-color: #48c9b0;
+  color: white;
+}
+
+.chart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.bitcoin-price-chart {
+  background-image: url("https://www.investopedia.com/thmb/1v-zq_67Y96g-tIhrpTZ2EqDsLE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/image-ba1de852e0c24d1ba2495e575c73f5cd.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 45%;
+  height: 700px;
+  margin: 25px auto;
+  border: 2px solid #ccc;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ripple-price-chart {
+  background-image: url("https://cryptopotato.com/wp-content/uploads/2024/10/XRPUSDT_2024-10-16_10-31-37.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 45%;
+  height: 700px;
+  margin: 40px auto;
+  border: 2px solid #ccc;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=style.css.map */

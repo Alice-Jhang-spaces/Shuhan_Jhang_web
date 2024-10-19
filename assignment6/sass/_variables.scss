@@ -1,0 +1,45 @@
+// Original Variables
+$primary-color: #5ddbef;
+$secondary-color: #eded95;
+$font-stack: 'Arial', sans-serif;
+$background-light: #f0f0f0;
+
+// Color Variables
+$shadow-color: rgba(0, 0, 0, 0.1);  // Shadow color, can be used in box shadows
+
+// Other Variables
+$font-color: #333;                 // Main font color
+$font-family: 'Arial', sans-serif; // Default font family
+
+// Dark and Light Background Colors
+$dark-background: black;
+$light-background: white;
+
+// New Variables
+$primary: #81899b; // New primary color
+$accent: #302e24;  // New accent color
+$warn: darkblue;    // New warning color
+
+// CSS Variables inside :root
+:root {
+  --primary-color: #3498db;
+  --primary-color-hover: #a2e69a; /* Manually define a darkened version */
+  --button-bg: #655465;
+  --button-text-color: #000;
+
+  // New Color Variables from Sass
+  --primary: #{$primary};
+  --accent: #{$accent};
+  --warn: #{$warn};
+
+  // Even though this looks like a Sass variable, it's valid CSS so it's not
+  // evaluated. This is intended for consumption by JavaScript.
+  --consumed-by-js: #{$primary};
+}
+
+// Dark Theme Modifications, Custom Properties
+body.dark-theme {
+  --button-bg: #000;
+  --button-text-color: #fff;
+  --primary-color-hover: #a2e69a;  /* Darken for dark theme */
+}

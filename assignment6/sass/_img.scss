@@ -1,0 +1,65 @@
+// Define a list for the image URLs
+$image-urls: 
+  'https://www.investopedia.com/thmb/1v-zq_67Y96g-tIhrpTZ2EqDsLE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/image-ba1de852e0c24d1ba2495e575c73f5cd.png', 
+  'https://cryptopotato.com/wp-content/uploads/2024/10/XRPUSDT_2024-10-16_10-31-37.png';
+
+// Define base values for layout
+$base-width: 45%; // Base width for images
+$new-width: 40%;
+$extra-width: 5%; // Extra width to adjust dynamically
+$base-height: 700px; // Base height for the images
+$new-height: 400px;
+$extra-height: 300px; // Extra height to add for a taller chart
+$base-gap: 30px; // Base gap between charts
+$extra-gap: 10px; // Extra gap to add dynamically
+
+// Dynamic lists for layout properties
+$widths: $base-width, $new-width + $extra-width; // Calculate dynamic width using math
+$heights: $base-height, $new-height + $extra-height; // Dynamic height calculation
+$gaps: $base-gap, $base-gap + $extra-gap; // Dynamic gap between charts
+
+// Fibonacci function to calculate dynamic values
+@function fibonacci($n) {
+  $sequence: 0 1;
+  @for $_ from 1 through $n {
+    $new: nth($sequence, length($sequence)) + nth($sequence, length($sequence) - 1);
+    $sequence: append($sequence, $new);
+  }
+  @return nth($sequence, length($sequence));
+}
+
+// Mixin to apply dynamic background, width, and height with Fibonacci margin
+@mixin chart-background($index, $fibonacci-index) {
+  background-image: url(nth($image-urls, $index)); // Use image from list
+  background-size: contain; // Keep the original aspect ratio
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Dynamic width and height using math functions
+  width: nth($widths, $index); // Set the width dynamically
+  height: nth($heights, $index); // Set the height dynamically
+  
+  // Applying Fibonacci for dynamic margins
+  margin: fibonacci($fibonacci-index) * 5px auto; // Fibonacci-based margin
+
+  border: 2px solid #ccc; // Add a border for aesthetics
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+}
+
+// Chart container using Flexbox layout
+.chart-container {
+  display: flex; // Use Flexbox for alignment
+  justify-content: space-between; // Space the charts evenly
+  align-items: center; // Vertically center the charts
+  gap: nth($gaps, 1); // Apply the dynamic gap between the charts
+  padding: 20px; // Add padding for a cleaner layout
+}
+
+// Applying the mixin to both charts using Fibonacci margins
+.bitcoin-price-chart {
+  @include chart-background(1, 4); // Apply first image and Fibonacci margin
+}
+
+.ripple-price-chart {
+  @include chart-background(2, 5); // Apply second image and Fibonacci margin
+}
