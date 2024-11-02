@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <label>Email</label>
+            <input type="text" id="email" />
+            <span id="emailError" class="error"></span>
+            <br><br>
+
+            <label>Username</label>
+            <input type="text" id="username" />
+            <span id="usernameError" class="error"></span>
+            <br>
+
+            <label>Password</label>
+            <input type="password" id="password" />
+            <span id="passwordError" class="error"></span>
+            <br>
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" />
+            <span id="confirmPasswordError" class="error"></span>
+            <br>
+
+            <button type="button" id="loginButton" disabled>Login</button>
+        </form>
+
+        <!-- Navigation Links -->
+        <div class="navigation">
+            <button onclick="window.location.href='calculator.html'">Go to Calculator</button>
+            <button onclick="window.location.href='stopwatch.html'">Go to Stopwatch</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            const validateEmail = (email) => /^[a-zA-Z0-9._%+-]+@northeastern\.edu$/.test(email);
+
+            const validateField = (field, errorField, condition, message) => {
+                $(errorField).text(condition ? "" : message).css("color", "red");
+                return condition;
+            };
+
+            $('#loginForm input').on('input', () => {
+                const emailValid = validateField("#email", "#emailError", validateEmail($('#email').val()), "Invalid email format. Must be a northeastern.edu email.");
+
+                const usernameValid = validateField(
+                "#username",
+                "#usernameError",
+                /^[a-zA-Z]{3,20}$/.test($('#username').val()),
+                "Username must be 3-20 characters and contain only letters."
+                );
+
+                const passwordValid = validateField(
+                    "#password",
+                    "#passwordError",
+                    /^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/.test($('#password').val()),
+                    "Password must be 8-20 characters and contain at least one special character."
+                );
+
+                const confirmPasswordValid = validateField(
+                    "#confirmPassword",
+                    "#confirmPasswordError",
+                    $('#password').val() === $('#confirmPassword').val(),
+                    "Passwords do not match."
+                );
+
+                $('#loginButton').prop('disabled', !(emailValid && usernameValid && passwordValid && confirmPasswordValid));
+            });
+
+            $('#loginButton').click(() => {
+                window.location.href = 'calculator.html?username=' + encodeURIComponent($('#username').val());
+            });
+        });
+    </script>
+</body>
+</html>

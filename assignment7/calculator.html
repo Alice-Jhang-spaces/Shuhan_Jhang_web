@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p>Welcome, <span id="displayUsername"></span></p>
+
+        <label for="number1">Number 1:</label>
+        <input type="text" id="number1" />
+        <span id="number1Error" class="error"></span>
+        <br>
+
+        <label for="number2">Number 2:</label>
+        <input type="text" id="number2" />
+        <span id="number2Error" class="error"></span>
+        <br>
+
+        <button id="addButton">Add</button>
+        <button id="subtractButton">Subtract</button>
+        <button id="multiplyButton">Multiply</button>
+        <button id="divideButton">Divide</button>
+        <br>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" readonly />
+
+        <!-- Navigation Links -->
+        <div class="navigation">
+            <button onclick="window.location.href='login.html'">Back to Login</button>
+            <button onclick="window.location.href='stopwatch.html'">Go to Stopwatch</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            const params = new URLSearchParams(window.location.search);
+            $('#displayUsername').text(params.get('username'));
+
+            const validateNumber = (field, errorField, minLength = 1, maxLength = 10) => {
+                const value = $(field).val();
+                const isValid = /^[0-9]+$/.test(value) && value.length >= minLength && value.length <= maxLength;
+                $(errorField).text(isValid ? "" : `Please enter a number between ${minLength} and ${maxLength} digits`).css("color", "red");
+                return isValid;
+            };
+
+            // Real-time validation for number1 and number2 fields
+            $('#number1').on('input', () => validateNumber("#number1", "#number1Error", 1, 10));
+            $('#number2').on('input', () => validateNumber("#number2", "#number2Error", 1, 10));
+
+            const calculate = (operation) => {
+                const number1Valid = validateNumber("#number1", "#number1Error", 1, 10);
+                const number2Valid = validateNumber("#number2", "#number2Error", 1, 10);
+
+                if (number1Valid && number2Valid) {
+                    const num1 = parseFloat($('#number1').val());
+                    const num2 = parseFloat($('#number2').val());
+                    const result = operation === "add" ? num1 + num2 :
+                                   operation === "subtract" ? num1 - num2 :
+                                   operation === "multiply" ? num1 * num2 :
+                                   num2 !== 0 ? num1 / num2 : "Infinity";
+                    $('#result').val(result);
+                }
+            };
+
+            $('#addButton').click(() => calculate("add"));
+            $('#subtractButton').click(() => calculate("subtract"));
+            $('#multiplyButton').click(() => calculate("multiply"));
+            $('#divideButton').click(() => calculate("divide"));
+        });
+    </script>
+</body>
+</html>

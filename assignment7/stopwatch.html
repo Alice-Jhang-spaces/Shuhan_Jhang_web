@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <label id="timeLabel">00:00:00</label>
+        <input type="date" id="datePicker" />
+        
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+        <button id="resetButton">Reset</button>
+
+        <!-- Navigation Links -->
+        <div class="navigation">
+            <button onclick="window.location.href='login.html'">Back to Login</button>
+            <button onclick="window.location.href='calculator.html'">Go to Calculator</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            let interval = null;
+            let seconds = 0;
+
+            const updateTime = () => {
+                const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(seconds % 60).padStart(2, '0');
+                $('#timeLabel').text(`${hrs}:${mins}:${secs}`);
+            };
+
+            const startTimer = async () => {
+                if (interval != null) {
+                    return;
+                }
+
+                interval = setInterval(() => {
+                    seconds++;
+                    updateTime();
+                }, 1000);
+            };
+
+            const stopTimer = async () => {
+                clearInterval(interval);
+                interval = null
+            };
+
+            const resetTimer = async () => {
+                await stopTimer();
+                seconds = 0;
+                updateTime();
+            };
+
+            $('#datePicker').val(new Date().toISOString().slice(0, 10));
+
+            $('#startButton').click(async () => await startTimer());
+            $('#stopButton').click(async () => await stopTimer());
+            $('#resetButton').click(async () => await resetTimer());
+        });
+    </script>
+</body>
+</html>

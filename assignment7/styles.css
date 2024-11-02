@@ -1,0 +1,96 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eed6ef, #c3d8ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for Centering the Content */
+.container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Label and Text Styling */
+label, p {
+    font-weight: bold;
+    color: #064b55;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Input Field Styling */
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Error Message Styling */
+.error {
+    font-size: 0.9em;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* General Button Styling */
+button {
+    width: 100%;
+    background-color: rgb(52, 57, 60);
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific Button Colors */
+#startButton { background: linear-gradient(135deg, #e5efba, #6ce2f4);color:black; }
+#stopButton { background:linear-gradient(135deg, #e5efba, #6ce2f4); color:black;}
+#resetButton { background: linear-gradient(135deg, #e5efba, #6ce2f4);color:black;}
+#loginButton {
+    color: #eed6ef;
+}
+
+/* Hover Effect: Increase Size and Add Shadow */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Slightly increase button size */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+/* Styling for the time label */
+#timeLabel {
+    font-size: 2em;
+    color: #1e1e1f;
+}
+
+/* Navigation Button Styling */
+.navigation button {
+    background: linear-gradient(135deg, #eed6ef, #c3d8ec);
+    color: #064b55;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation button:hover {
+    transform: scale(1.05); /* Increase size slightly on hover */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
